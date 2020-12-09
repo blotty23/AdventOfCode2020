@@ -11,6 +11,8 @@ class AdventofCode
 
   def self.day2
     password = Passwords.new
+    puts "number of correct old passwords: #{password.iterate_over_passwords(password.inital_array_get)}"
+    puts "number of correct new passwords: #{password.iterate_over_passwords_2(password.inital_array_get)}"
   end
 end
 
