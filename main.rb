@@ -1,5 +1,6 @@
 require_relative "AdventofCode1"
 require_relative "AdventofCode2"
+require_relative "AdventofCode3"
 
 class AdventofCode
   def self.day1
@@ -14,6 +15,18 @@ class AdventofCode
     puts "number of correct old passwords: #{password.iterate_over_passwords(password.inital_array_get)}"
     puts "number of correct new passwords: #{password.iterate_over_passwords_2(password.inital_array_get)}"
   end
+
+  def self.day3
+    sled = Sled.new
+    puts "part 1: #{sled.run_santa_run([1,3])}"
+    directions = [[1,1],[1,3],[1,5],[1,7],[2,1]]
+    trees = []
+    directions.each do |dir|
+      sled = Sled.new
+      trees << sled.run_santa_run(dir)
+    end
+    puts "part 2: #{trees.join(",")} \n multiplied: #{trees.inject(:*)}"
+  end
 end
 
 
@@ -22,6 +35,8 @@ when "day1"
   AdventofCode.day1
 when "day2"
   AdventofCode.day2
+when "day3"
+  AdventofCode.day3
 else
   puts "wrong argument type - you want dayx"
 end
