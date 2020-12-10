@@ -1,6 +1,7 @@
 require_relative "AdventofCode1"
 require_relative "AdventofCode2"
 require_relative "AdventofCode3"
+require_relative "AdventofCode4"
 
 class AdventofCode
   def self.day1
@@ -27,6 +28,11 @@ class AdventofCode
     end
     puts "part 2: #{trees.join(",")} \n multiplied: #{trees.inject(:*)}"
   end
+
+  def self.day4
+    passports = Passports.new
+    puts "part 1: #{passports.how_many_valid_passports("./data/Day4.txt")}"
+  end
 end
 
 
@@ -37,6 +43,8 @@ when "day2"
   AdventofCode.day2
 when "day3"
   AdventofCode.day3
+when "day4"
+  AdventofCode.day4
 else
   puts "wrong argument type - you want dayx"
 end
